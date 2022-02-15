@@ -1,0 +1,178 @@
+body{
+    overflow-x: hidden;
+}
+
+
+body.active-modal {
+    overflow-y: hidden;
+}
+
+.btn-modal {
+    padding: 10px 20px;
+    display: block;
+    margin: 100px auto 0;
+    font-size: 18px;
+}
+
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.overlay {
+    background: rgba(49,49,49,0.8);
+}
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 3px;
+    max-width: 600px;
+    min-width: 300px;
+}
+
+
+.modal-content #ip{
+    height: 40px;
+    padding: 0.2em 0.5em;
+    border-bottom : 0.5px solid black;
+}
+
+
+.modal-content label{
+    text-align: left;
+    float:left;
+    margin-bottom: 5px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 7px;
+    margin-bottom: 10px;
+} 
+
+
+.modal-content #update{
+    max-width: 600px;
+    background-color: lightpink;
+    border-radius:2px;
+    height: 50px;
+}
+
+#main{
+    margin-left: 200px;
+}
+
+
+
+
+
+
+
+#box{
+    /* outline: 0.5px solid; */
+    padding: 0px;
+  /* box-shadow: 0.5px 0.5px 0.5px 0.5px #888888; */
+  box-shadow: 5px 10px 18px 	#DCDCDC;
+}
+
+
+
+
+#overlay 
+{
+        position: fixed; /* Sit on top of the page content */
+        display: none; /* Hidden by default */
+        width: 100%; /* Full width (cover the whole page) */
+        height: 100%; /* Full height (cover the whole page) */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+        z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+        cursor: pointer; /* Add a pointer on hover */
+}
+
+
+
+
+
+/* Get Items */
+
+
+/* #flex
+{
+    background-color: lightsalmon;
+    width:450px;
+    padding: 0px; 
+    margin: 60px;
+    border:1px solid red;
+    display: flex;
+    flex-wrap: wrap;
+}
+#flex>div
+{
+    font-size: 40px;
+    color: black;
+    width: 30px;
+    text-align: center;
+    padding: 0;
+    margin: 20px;
+}
+
+/* #first-div h4,small,h6,button{
+} */
+
+/* #first-div button{
+    float:left;
+}
+
+#first-div{
+    width:250px;
+}
+ #first-div small{
+    max-width:20px;
+    word-wrap:break-word;
+}
+
+#second-div img{
+    width:200px;
+    height:200px;
+}  */
+
+
+
+/* #flex{
+    margin-left: 40px;
+           margin-right: 40px;
+           
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-auto-rows: minmax(100px,auto);
+            grid-gap: 1em;
+            text-align: center;
+            background-color: lightpink;
+            border-radius: 5px;
+}
+
+
+#flex>div{
+    margin-top: 30px;
+    background-color: lightgray;
+    margin: 30px;
+    border-radius: 10px;
+    border: lightsteelblue solid 4px;
+    border-style: outset;
+} */

@@ -1,0 +1,32 @@
+#vertical{
+    height:100vh;
+    width:250px;
+    background-color: aqua;
+}
+
+
+#div{
+    background-color: lightgray;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.row{
+    margin-top: 40px;
+}
+
+
+.row h4{
+    font-family: Verdana, sans-serif;
+    text-align : center;
+}
+
+
+#top img{
+    align-items: center;
+    margin-left: 200px;
+}
+
+#top .item{
+    margin-top:50px;
+}

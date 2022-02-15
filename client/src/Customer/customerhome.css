@@ -1,0 +1,38 @@
+#h4{
+    align: left;
+}
+
+
+
+#h4::after{
+    content: "\a";
+    white-space: pre;
+}
+
+
+#home-div img{
+    height:300px;
+    width:400px;
+}
+
+
+#home-div-first{
+  /* background-color: aquamarine; */
+  width:20px;
+}
+
+
+
+#home-div-first .main{
+  margin-top: 40px;
+  margin-left: 16vw;
+}
+
+
+#home-div-second{
+/* background-color: blue; */
+}
+
+#home-div-second img{
+    margin-left:80px;
+}

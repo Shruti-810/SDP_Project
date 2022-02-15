@@ -1,0 +1,48 @@
+
+
+
+  .login-box{
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    text-align :center;
+    margin-top : 15vh;
+    margin-left : 35vw;
+    /* background-color: mediumaquamarine; */
+    width:30vw;
+    padding : 10px;
+  }
+
+
+  .login-box .user-box{
+    padding: 0.2em 0.5em;
+    border-bottom : 1px solid black;
+    width:25vw;
+  }
+
+
+  .login-box label{
+    text-align: left;
+    float:left;
+    margin-left: 30px;
+  }
+
+
+  .login-box .file{
+    float:left;
+    margin-left: 30px;
+  }
+
+
+  .login-box #btn{
+    width: 25vw;
+    background-color: lightgray;
+  }
+
+
+  /* .login-box {
+    padding: 10px 0px;
+  } */
+
+
+  .login-box #new{
+    width:25vw;
+  }
