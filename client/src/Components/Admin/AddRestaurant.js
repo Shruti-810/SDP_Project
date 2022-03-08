@@ -113,7 +113,7 @@ let Newrestaurant=()=>{
                             <div className='container' id='box'>
                                  <div id='row'>
                               <div className='col'>
-                                 <img alt='noimg' src={img} />
+                                 <img alt='noimg' src={require(`../../image/${i.image}`)} />
                               </div>
                               <div className='col pl-2'>
                                  <h5>{i.name}</h5>

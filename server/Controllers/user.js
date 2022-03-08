@@ -41,7 +41,7 @@ export const addUser=(req,res)=>{
                 }
                 else{
                     req.session.user = user
-                    // console.log(req.session.user)
+                    console.log(req.session.user)
                     if(email === "shrutimak810@gmail.com")
                     {
                         console.log("Admin logged in")
@@ -83,7 +83,7 @@ export const registerUser=(req,res)=>{
                email,
                password : hash
            })
-           user.save(err=>{
+           user.save(error=>{
                if(error){
                    console.log("Error in registering : "+error.message);
                    res.send(error);

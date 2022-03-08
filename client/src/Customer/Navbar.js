@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import img from '../cart.png';
 import {BrowserRouter as Router , Routes , Route,Link,useNavigate} from 'react-router-dom';
 import Homepage from './customerHome';
@@ -12,6 +12,7 @@ import Order from '../Components/Admin/order'
 import AdminHomePage from '../Components/Admin/adminhome';
 import Addnewitem from '../Components/Admin/additem';
 import AllUser from '../Components/Admin/user'
+import axios from 'axios';
 
 let Nav=()=>{
 
@@ -19,6 +20,30 @@ let Nav=()=>{
     email:"",
     password:""
   })
+
+  const[count,setCount]=useState({
+    count1:"",
+  })
+
+  useEffect(()=>{
+    let count_cart=()=>{
+      let user=sessionStorage.getItem("loggedEmail")
+      axios.get(`http://localhost:5000/total?email=${user}`)
+      .then(res=>{
+        // console.log(res.data)
+        // console.log(res.data.length)
+        setCount({
+          count1:res.data.length
+        })
+        
+      })
+      .catch(
+        console.log("Error in getting count")
+      )
+      console.log(count)
+    }
+    count_cart();
+  },[])
 
   const [navbar,setNavbar]=useState(false);
 
@@ -51,7 +76,9 @@ let Nav=()=>{
           <div>
           <div id='nav' className=''>
             <ul class="main" id={!navbar ? 'navbar-active' : 'navbar'}>
-              <li id='nav-li'><Link to="/cart" id='nav-link'><img src={img} alt='nimg'/></Link></li>
+              <li id='nav-li'><Link to="/cart" id='nav-link'><img src={img} alt='nimg'/>
+              {/* <p id='count'>{count.count1}</p> */}
+              </Link></li>
               <li id='nav-li'><Link to='/ok' id='nav-link'>Offers</Link></li>
               <li id='nav-li'><Link to='/ok' id='nav-link'>Menu</Link></li>
               <li id='nav-li'><Link to="/login" id='nav-link'>Login</Link></li>

@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 let Homepage = () => {
+
+
     const [data1, setData] = useState({
         data: []
     })
@@ -17,12 +19,18 @@ let Homepage = () => {
     })
 
 
-    const addToCart=(_id)=>{
-       const id=_id;
-       const price=319;
-       axios.post("http://localhost:5000/addtocart/",id,price)
-       .then()
-       .catch()
+    const addToCart=(name,image,price)=>{
+        const user = sessionStorage.getItem("loggedEmail")
+        console.log(user);
+       const item={
+        name:name,
+        image:image,
+        price:price,
+        user : user
+       }
+       axios.post("http://localhost:5000/addtocart/",item)
+       .then(console.log("Sent Cart"))
+       .catch(console.log("Error sending Cart"))
     }
 
 
@@ -79,8 +87,8 @@ let Homepage = () => {
 
                                 <div className='container' id='box'>
                                     <div id='row'>
-                                        <div className=''>
-                                            <img alt='noimg' src={img} />
+                                        <div className='' id='img1'>
+                                            <img alt='noimg' src={require(`../image/${i.image}`)} />
                                         </div>
                                         <div className='pl-2'>
                                             {/* <h5>{i._id}</h5> */}
@@ -88,7 +96,7 @@ let Homepage = () => {
                                             <small>{i.description}</small><br />
                                             <h6>{i.size}</h6>
                                             <h6>{i.price}/-</h6>
-                                            <button onClick={()=>addToCart(i._id)} class="btn btn-outline-secondary mb-2">Add to Cart</button>
+                                            <button onClick={()=>addToCart(i.name,i.image,i.price)} class="btn btn-outline-secondary mb-2">Add to Cart</button>
                                         </div>
 
 
