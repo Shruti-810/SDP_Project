@@ -1,14 +1,17 @@
-
-
-
   .login-box{
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    box-shadow: 0 5px 20px rgba(0,0,0,.6);
+
+    
+
     text-align :center;
     margin-top : 15vh;
     margin-left : 35vw;
     /* background-color: mediumaquamarine; */
     width:30vw;
     padding : 10px;
+    height:auto;
+    font-family: "Jost", sans-serif;
+    font-size: large;
   }
 
 
@@ -45,4 +48,20 @@
 
   .login-box #new{
     width:25vw;
+    height:35px;
+    font-family: "Jost", sans-serif;
+    font-size: large; 
+    font-weight: 500;
+    margin-bottom: 10px;
   }
+
+  .login-box #new1{
+    width:25vw;
+    height:35px;
+    font-family: "Jost", sans-serif;
+    font-size: large; 
+    font-weight: 500;
+    margin-top: 10px;
+  }
+
+ 

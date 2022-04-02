@@ -13,10 +13,18 @@ import path from 'path';
 import session from "express-session";
 import dotenv from 'dotenv'
 import cookieParser from "cookie-parser";
-import User from './Model/user.js'
+import { Server } from "socket.io";
+import { AddOrder, ChangeStatus, getOrders,getStatus } from "./Controllers/order.js";
+import http from 'http';
+
+
 dotenv.config()
 
 const app=express();
+
+
+
+
 app.use(express.json());
 app.use(cors({
     // origin : ("http://localhost:3000/"),
@@ -50,7 +58,7 @@ mongoose.connect("mongodb://localhost:27017/SDP_Project",{
     console.log("Database Connected")
 })
 
-app.listen(PORT,()=>{
+const server1 = app.listen(PORT,()=>{
     console.log("Server Running at : "+PORT);
 })
 
@@ -114,6 +122,42 @@ app.get('/getoneitem',getOneItem);
 app.get('/total',getCount)
 
 app.post('/deleteCart',deleteCart);
+
+
+app.post('/addOrder',AddOrder);
+app.get('/getOrders',getOrders);
+app.post('/changeStatus',ChangeStatus);
+app.get('/getTracking',getStatus);
+
+
+
+// Socket
+
+const httpServer = http.createServer(app);
+
+const io = new Server(httpServer, {
+    cors : {
+        origin: 'http://localhost:3000'
+    }
+});
+
+
+httpServer.listen(3001,()=>{
+    console.log("Socket Running")
+});
+
+io.on("connection", (socket) => {
+//    console.log("A user connected") 
+//    console.log(socket.id)
+    socket.on("send_status",(data)=>{
+       console.log(data)
+       socket.broadcast.emit('receive_status', data);
+    })
+});
+
+// End Socket
+
+
 
 
 

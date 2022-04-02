@@ -10,6 +10,9 @@ let Login=()=>{
         email:"",
         password:""
     })
+
+    const[admin,setAdmin]=useState("false");
+
     const handleChange=(event)=>{
         const {name,value}=event.target
         setUser({
@@ -24,7 +27,10 @@ let Login=()=>{
         .then(res=>{
             console.log(res.data)
         })
-    },[])
+    })
+
+
+
     const login=()=>{
         axios.post('http://localhost:5000/login',user)
         .then(res=>{
@@ -36,6 +42,7 @@ let Login=()=>{
                     password : res.data.user.password
                 });
                 navigate('/admin');
+                setAdmin(!admin);
             }
             else{
                 setUser({
@@ -58,9 +65,10 @@ let Login=()=>{
         <input class="user-box" type='password' name='password' value={user.password} placeholder='Enter Your Password' onChange={handleChange}></input><br/>
         <br/>
         </div>
-        <button onClick={login} class="btn btn-outline-secondary" id='new'>Sign In</button><br/><br/>
-        <small>Already have an account? Login Here</small><br/><br/>
-        <button onClick={()=>{navigate('/login')}} class="btn btn-outline-secondary" id='new'>Sign Up</button>
+        <button onClick={login} class="btn btn-outline-secondary" id='new'>Sign In</button><br/>
+        <small id="small">Already have an account? Login Here</small><br/>
+        <button onClick={()=>{navigate('/login')}} class="btn btn-outline-secondary" id='new1'>Sign Up</button>
+        <br/>
     </div>
     );
 }

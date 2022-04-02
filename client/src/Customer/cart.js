@@ -1,14 +1,20 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect, createContext} from 'react';
 import axios from 'axios';
-
-
+import './Cart.css'
+import PlaceOrder from './order';
+import {  useNavigate } from 'react-router-dom';
 
 
 let Cart = () => {
 
+    const userContext = createContext();
+
+    const navigate = useNavigate();
     const [cart,setCart]=useState({
         cart1: [],
     })
+
+    const [order,setOrder] = useState(false);
 
     let total=0;
 
@@ -21,13 +27,11 @@ let Cart = () => {
     }
 
 
-    // let render=0;
+
     useEffect(()=>{
 
         getCart();
-        // return () => {
-        //     setCart({}); 
-        // };
+
     });
 
 
@@ -65,7 +69,8 @@ let Cart = () => {
     }
 
     const OrderNow=()=>{
-        // <Homepage/>
+        setOrder(!order);
+       
     }
     
 
@@ -74,47 +79,56 @@ let Cart = () => {
 
     
     return (
-        <div>
+        <div className='row'>
 
+<div className='container col' id='cart-main'>
             {
 
                 (cart.cart1.length > 0 &&
                     cart.cart1.map(element => {
-                        return <div className='container'><div className='row'>
-                            <div className='col'>
-                                <img className='col' alt='noimg' src={require(`../image/${element.product_image}`)} />
+                        return <div className='cart'>
+                            <div className='image'>
+                                <img className='img' alt='noimg' src={require(`../image/${element.product_image}`)} />
                             </div>
-                            <div className='col'>
-                                <h4 className='col'>{element.product_name}</h4>
-                                {/* <h4 className='col'><button className='btn btn-secondary'>-</button>{element.quantity}<button className='btn btn-secondary'>+</button></h4> */}
-                                <button className='col btn btn-secondary' onClick={() => deleteCart(element._id)}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                            <div className='desc'>
+                                <h4 className='h4'>{element.product_name}</h4>
+                                <button className='button' onClick={() => deleteCart(element._id)}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M6 1.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v1H6v-1Zm5 0v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5ZM4.5 5.029a.5.5 0 1 1 .998-.06l.5 8.5a.5.5 0 0 1-.998.06l-.5-8.5Zm6.53-.528a.5.5 0 0 1 .47.528l-.5 8.5a.5.5 0 1 1-.998-.058l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z" />
                                     </svg>
                                 </button>
 
 
                             </div>
-                            <div className='col'>
-                                <h4 className='col'>{element.product_price}/-</h4>
+                            <div className='price'>
+                                <h4 className=''>{element.product_price}/-</h4>
                             </div>
                         </div>
-                        </div>
+                        
                     })
                 )
 
             }
+          
+        
 
-
-            <div>
+            </div>
+            
+            <div id='total' className='col-1'>
                 Total :
                 {
                     (cart.cart1.length > 0 && <p>{total}/-</p>)
                 }
-
+                <button onClick={() => OrderNow()} className='btn btn-secondary' id='totalbtn'>Order Now</button>
             </div>
 
-            <button onClick={() => OrderNow()}>Order Now</button>
+            
+
+
+        
+
+          {order && <PlaceOrder total={total} cart={cart} setToggle={OrderNow}/>}
+
 
 
 

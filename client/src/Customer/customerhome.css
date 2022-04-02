@@ -1,5 +1,5 @@
 #h4{
-    align: left;
+    align-items: left;
 }
 
 
@@ -9,6 +9,46 @@
     white-space: pre;
 }
 
+
+#main #btn{
+  height:35px;
+  font-family: "Jost", sans-serif;
+  font-family: "Jost", sans-serif;
+  font-size: large; 
+  font-weight: 500;
+  width:50%;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+
+
+#grid h2{
+  font-family: "Jost", sans-serif;
+  font-size: 20px; 
+  font-weight: 450;
+  letter-spacing: 0.1px;
+  line-height: 30px;
+}
+
+
+#grid small{
+  font-family: "Jost", sans-serif;
+  line-height: 20px;
+  font-weight: 400;
+  font-size: 15px;
+  letter-spacing: 0.1px;
+
+}
+
+
+#grid h6{
+  /* margin-top: 10px; */
+  font-family: "Jost", sans-serif;
+  line-height: 15px;
+  font-weight: 400;
+  font-size: 15px;
+}
 
 #home-div img{
     height:300px;
@@ -29,10 +69,14 @@
 }
 
 
-#home-div-second{
-/* background-color: blue; */
-}
+
+
+
+
 
 #home-div-second img{
     margin-left:80px;
 }
+
+
+

@@ -64,7 +64,7 @@ let Homepage = () => {
 
                 </div>
             </section>  */}
-
+{/* 
             <div className="continer" id='home-div'>
             <div className="row">
                 <div className="col" id='home-div-first'>
@@ -78,7 +78,7 @@ let Homepage = () => {
                         <img src={img} alt=""/>
                 </div>
             </div>
-            </div>
+            </div> */}
             <div className='container' id='main'>
                 <div className='row'>
                     {
@@ -90,13 +90,13 @@ let Homepage = () => {
                                         <div className='' id='img1'>
                                             <img alt='noimg' src={require(`../image/${i.image}`)} />
                                         </div>
-                                        <div className='pl-2'>
+                                        <div className='pl-2' id='grid'>
                                             {/* <h5>{i._id}</h5> */}
-                                            <h5 id='h4'>{i.name}</h5>
-                                            <small>{i.description}</small><br />
+                                            <h2 id='h4'>{i.name}</h2>
+                                            <small>{i.description}</small><br /><br/>
                                             <h6>{i.size}</h6>
                                             <h6>{i.price}/-</h6>
-                                            <button onClick={()=>addToCart(i.name,i.image,i.price)} class="btn btn-outline-secondary mb-2">Add to Cart</button>
+                                            <button onClick={()=>addToCart(i.name,i.image,i.price)} id='btn' class="btn btn-outline-secondary">Add to Cart</button>
                                         </div>
 
 

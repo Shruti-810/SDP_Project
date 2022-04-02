@@ -1,0 +1,101 @@
+#order{
+    border: 1px solid black;
+    margin: 20px;
+    padding: 10px;
+    width:50%;
+}
+
+
+#order input{
+    border:0.5 px solid blue;
+    margin: 2px;
+    width: 75%;
+    padding: 3px;
+    height:30px;
+}
+
+
+#order button{
+    border: 1px solid black;
+}
+
+
+/* Modal  */
+
+
+
+body{
+    overflow-x: hidden;
+}
+
+
+body.active-modal {
+    overflow-y: hidden;
+}
+
+.btn-modal {
+    padding: 10px 20px;
+    display: block;
+    margin: 100px auto 0;
+    font-size: 18px;
+}
+
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.overlay {
+    background: rgba(49,49,49,0.8);
+}
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 3px;
+    max-width: 600px;
+    min-width: 300px;
+}
+
+
+.modal-content #ip{
+    height: 40px;
+    padding: 0.2em 0.5em;
+    border-bottom : 0.5px solid black;
+}
+
+
+.modal-content label{
+    text-align: left;
+    float:left;
+    margin-bottom: 5px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 7px;
+    margin-bottom: 10px;
+} 
+
+
+.modal-content #update{
+    max-width: 600px;
+    background-color: lightpink;
+    border-radius:2px;
+    height: 50px;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    padding-top: 10px;
+}

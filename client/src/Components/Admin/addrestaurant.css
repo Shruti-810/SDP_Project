@@ -72,7 +72,39 @@ body.active-modal {
 
 #main{
     margin-left: 200px;
+    font-size: large;
+    font-weight: 400;
+    font-family: "Jost", sans-serif;;
 }
+
+
+#grid h2{
+    font-family: "Jost", sans-serif;
+    font-size: 20px; 
+    font-weight: 450;
+    letter-spacing: 0.1px;
+    line-height: 30px;
+  }
+  
+  
+  #grid small{
+    font-family: "Jost", sans-serif;
+    line-height: 20px;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.1px;
+  
+  }
+  
+  
+  #grid h6{
+    /* margin-top: 10px; */
+    font-family: "Jost", sans-serif;
+    line-height: 15px;
+    font-weight: 400;
+    font-size: 15px;
+  }
+  
 
 
 

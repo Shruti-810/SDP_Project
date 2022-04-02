@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+import './user.css';
 
 
 const AllUser = ()=>{
@@ -29,19 +30,38 @@ const AllUser = ()=>{
         })
      }
     return(
-        <div class='table'>
-            <tr>
-                <th scope='col'>Name</th>
-                <th scope='col'>Email</th>
-            </tr>
-            {
+        <div class=''>
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email ID</th>
+            {/* <th>Action</th> */}
+        </tr>
+        </thead>
+        <tbody>
+
+
+        {
                 data1.data.map((i)=>{
                     return <tr>
                         <td>{i.name}</td>
                            <td>{i.email}</td>
+                           {/* <td><button className='btn btn-primary'>Delete</button></td> */}
                     </tr>
                 })
-            }
+        } 
+        </tbody>
+    </table>
+
+</div>
+ 
+
+
+
+
         </div>
     )
 }

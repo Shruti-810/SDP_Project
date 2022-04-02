@@ -1,0 +1,93 @@
+#cart-main{
+    height:auto;
+    /* -webkit-box-shadow: 0 2px 5px #888888;
+    -moz-box-shadow: 0 2px 5px #888888;
+    box-shadow: 0 2px 5px #888888; */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    margin-left: 100px;
+}
+
+
+
+.cart{
+    height:auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 20px;
+}
+
+
+
+.image{
+    display: grid;
+    grid-column: 1/2;
+    justify-content: start;
+    align-items: center;
+}
+
+
+.image .img{
+    height:200px;
+}
+
+.desc{
+    display: grid;
+    grid-column: 2/3;
+    padding: 15px;
+    float: left;
+    text-align: left;
+}
+
+
+.price{
+    display: grid;
+    grid-column: 3/4;
+}
+
+
+
+
+.desc .button{
+    width: 20px;
+    height: 20px;
+    margin-bottom: 100px;
+}
+
+.desc .h4{
+    font-family: "Jost", sans-serif;
+    font-size: large;
+    float: left;
+    text-align: left;
+    padding-left: 0%;
+}
+
+#total{
+    font-family: "Jost", sans-serif;
+    font-size: large;
+    width:25%;
+    padding: 5px;
+    grid-column: 4/5;
+    -webkit-box-shadow: 0 2px 5px #888888;
+    -moz-box-shadow: 0 2px 5px #888888;
+    box-shadow: 0 2px 5px #888888; 
+    height:auto;
+    align-items: right;
+    float : right;
+    padding: 10px;
+    height: 150px;
+    margin: 20px 100px 100px 20px;
+    border-radius: 3px;
+}
+
+#total #totalbtn{
+    height:35px;
+    font-family: "Jost", sans-serif;
+    font-size: large; 
+    font-weight: 500;
+    margin-bottom: 10px;
+    width: 100%;
+}

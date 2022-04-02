@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './addrestaurant.css';
 import axios from 'axios';
-import img from '../../image/74a41306-e80a-42a0-b5a3-8125b5df0d10-1643775664891.jpg';
+
 
 let Newrestaurant=()=>{
    const [item,setItem]=useState({
@@ -115,9 +115,10 @@ let Newrestaurant=()=>{
                               <div className='col'>
                                  <img alt='noimg' src={require(`../../image/${i.image}`)} />
                               </div>
-                              <div className='col pl-2'>
-                                 <h5>{i.name}</h5>
+                              <div className='col pl-2' id='grid'>
+                                 <h2>{i.name}</h2>
                                  <small id='sm'>{i.description}</small><br/>
+                                 <br/>
                                  <h6>{i.size}</h6>
                                  <h6>{i.price}/-</h6>
                                  <button className=' ml-32 mb-2' onClick={() => deleteItem(i._id, i.name)} ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">

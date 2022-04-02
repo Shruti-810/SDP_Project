@@ -56,8 +56,8 @@ let Register=()=>{
             <input class="user-box" type='password' name='confirmpassword' value={user.confirmpassword} placeholder='Enter Your Password Again' onChange={handleChange}></input><br/>
             <br/>
             </div>
-            <button onClick={register} class="btn btn-outline-secondary" id='new'>Sign Up</button><br/><br/>
-            <small>Already have an account? Login Here</small><br/><br/>
+            <button onClick={register} class="btn btn-outline-secondary" id='new'>Sign Up</button><br/>
+            <small id='small'>Already have an account? Login Here</small><br/>
             <button onClick={()=>{navigate('/login')}} class="btn btn-outline-secondary" id='new'>Sign In</button>
         </div>
     );
